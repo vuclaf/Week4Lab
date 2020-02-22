@@ -1,27 +1,25 @@
 
 /**
- * Write a description of class MyLinkedListContainer here.
+ * Contains instances of MyLinkedList and call add/search methods
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author EvanVu
+ * @version 1.0
  */
 public class MyLinkedListContainer<T>
 {
-    // instance variables - replace the example below with your own
     private MyLinkedList<T> myList;
 
     /**
-     * Constructor for objects of class MyLinkedListContainer
+     * Constructor for a new MyLinkedListContainer
      */
     public MyLinkedListContainer()
     {
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Add a new Node with a value to the front of a Linked list
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  The value (of type T that) needs to be added
      */
     public void addToFront(T value)
     {

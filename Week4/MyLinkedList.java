@@ -30,8 +30,9 @@ public class MyLinkedList<T> implements Iterable<T>
     }
     
     public void addFirst(T value){
-        if (this.head.getValue()==null){
-            this.head.setValue(value);
+        if (this.head==null){
+            Node<T> newHead = new Node(value, null);
+            this.head=newHead;
         }
         else{
             Node<T> newHead = new Node(value,this.head);
@@ -40,8 +41,20 @@ public class MyLinkedList<T> implements Iterable<T>
     }
     
     public void addEnd(T value){
-        Node<T> newTail = new Node(value,null);
-        this.tail=newTail;
+        if (this.head==null){
+            Node<T> newHead = new Node(value, null);
+            this.head=newHead;
+        }
+        else if (this.tail==null) {
+            Node<T> newTail = new Node(value,null);
+            this.tail=newTail;
+            this.head.setNext(tail);
+        }
+        else{
+            Node<T> newTail = new Node(value,null);
+            tail.setNext(newTail);
+            this.tail=newTail;
+        }
     }
     
     public Node<T> get(int element){
@@ -58,12 +71,12 @@ public class MyLinkedList<T> implements Iterable<T>
         return this.tail;
     }
     
-    public void setHead(Node<T> newHead){
-        this.head=newHead;
+    public void setHead(T value){
+        this.head.setValue(value);
     }
     
-    public void setTail(Node<T> newTail){
-        this.tail=newTail;
+    public void setTail(T value){
+        this.tail.setValue(value);
     }
     
 }
