@@ -71,12 +71,12 @@ public class MyLinkedList<T> implements Iterable<T>
         return this.tail;
     }
     
-    public void setHead(T value){
-        this.head.setValue(value);
+    public void setHead(Node<T> newHead){
+        this.head=newHead;
     }
     
-    public void setTail(T value){
-        this.tail.setValue(value);
+    public void setTail(Node<T> newTail){
+        this.tail=newTail;
     }
     
 }

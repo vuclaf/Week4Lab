@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=MyLinkedListContainer
+comment0.text=\n\ Contains\ instances\ of\ MyLinkedList\ and\ call\ add/search\ methods\n\n\ @author\ EvanVu\n\ @version\ 1.0\n
+comment1.params=
+comment1.target=MyLinkedListContainer()
+comment1.text=\n\ Constructor\ for\ a\ new\ MyLinkedListContainer\n
+comment2.params=value
+comment2.target=void\ addToFront(java.lang.Object)
+comment2.text=\n\ Add\ a\ new\ Node\ with\ a\ value\ to\ the\ front\ of\ a\ Linked\ list\n\n\ @param\ \ The\ value\ (of\ type\ T\ that)\ needs\ to\ be\ added\n
+comment3.params=value
+comment3.target=void\ addToBack(java.lang.Object)
+comment4.params=value
+comment4.target=int\ searchWithIterator(java.lang.Object)
+comment5.params=value
+comment5.target=int\ searchWOIterator(java.lang.Object)
+numComments=6

@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Contains instances of MyLinkedList and call add/search methods
  *
@@ -31,12 +31,21 @@ public class MyLinkedListContainer<T>
     }
     
     public int searchWithIterator(T value){
-    
+        Iterator iterator = new MyLinkedListIterator(myList);
+        int i=0;
+        while(iterator.hasNext()){
+            if(iterator.next()==value) return i;
+            i++;
+        }
         return -1;
     }
     
     public int searchWOIterator(T value){
-    
+        int i=0;
+        while (myList.get(i)!=myList.getTail()){
+           if (myList.get(i).getValue()==value) return i;
+           i++;
+        }
         return -1;
     }
 }

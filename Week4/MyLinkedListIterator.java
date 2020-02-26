@@ -18,19 +18,18 @@ public class MyLinkedListIterator<T> implements Iterator<T>
     }
     
     public boolean hasNext(){
-        if(current.getNext()==null){
+        if(current==myList.getTail()){
             return false;
         }
         return true;
     }
     
     public T next(){
-        if(current.getNext().getNext()==myList.getTail()){
-            this.previous2=previous;
-        }
-        this.previous=current;
-        Node<T> next = current.getNext();
-        return next.getValue();
+        if (current==null) return null;
+        if (current==myList.getTail()) return current.getValue();
+        previous=current;
+        current=current.getNext();
+        return previous.getValue();
     }
     
     public void remove(){
