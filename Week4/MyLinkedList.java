@@ -72,10 +72,17 @@ public class MyLinkedList<T> implements Iterable<T>
     }
     
     public void setHead(Node<T> newHead){
+        newHead.setNext(this.head.getNext());
         this.head=newHead;
     }
     
     public void setTail(Node<T> newTail){
+        Iterator itr = new MyLinkedListIterator(this);
+        int i =0;
+        while (itr.hasNext() && !itr.next().equals(this.tail)){
+            i++;
+        }
+        this.get(i-1).setNext(newTail);
         this.tail=newTail;
     }
     
