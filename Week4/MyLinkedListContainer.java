@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class MyLinkedListContainer<T>
 {
-    private MyLinkedList<T> myList;
+    private MyLinkedList<T> myList = new MyLinkedList<T>();
 
     /**
      * Constructor for a new MyLinkedListContainer
@@ -26,12 +26,22 @@ public class MyLinkedListContainer<T>
         myList.addFirst(value);
     }
     
+    /**
+     * Add a new Node with a value to the back of a Linked list
+     *
+     * @param  The value (of type T that) needs to be added
+     */
     public void addToBack(T value){
         myList.addEnd(value);
     }
     
+    /**
+     * Search the list for a wanted value using an iterator
+     *
+     * @param  The value (of type T that) needs to be found
+     */
     public int searchWithIterator(T value){
-        Iterator iterator = new MyLinkedListIterator(myList);
+        Iterator<T> iterator = new MyLinkedListIterator<T>(myList);
         int i=0;
         while(iterator.hasNext()){
             if(iterator.next()==value) return i;
@@ -40,6 +50,11 @@ public class MyLinkedListContainer<T>
         return -1;
     }
     
+    /**
+     * Search the list for a wanted value not using an iterator
+     *
+     * @param  The value (of type T that) needs to be found
+     */
     public int searchWOIterator(T value){
         int i=0;
         while (myList.get(i)!=myList.getTail()){
