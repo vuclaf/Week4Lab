@@ -38,6 +38,7 @@ public class MyLinkedListIterator<T> implements Iterator<T>
     public T next(){
         if (current==null) return null;
         if (current==myList.getTail()) return current.getValue();
+        if (current.getNext()==myList.getTail()) previous2=previous;
         previous=current;
         current=current.getNext();
         return previous.getValue();
